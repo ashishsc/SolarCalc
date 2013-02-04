@@ -33,7 +33,14 @@
 
     <div class="container">
     	<h1>Solar Calculator</h1>
-    	<p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+    	<fieldset>
+      <form action="calculate.php" method="get">
+        <label>How much of your electric bill would you like to eliminate on a monthly basis:<br>
+          $<input type="number" name="savings">
+          <input type="submit" value="Calculate">
+        </label>
+      </form>
+    </fieldset>
 
     </div> <!-- /container -->
 </body>

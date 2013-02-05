@@ -1,10 +1,13 @@
-<?
-  $savings = $_GET["savings"];
+<?php
+  define("KWH_FIXED", 0.14);
+  $monthly_savings = $_GET["savings"];
+  calculate($monthly_savings);
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Solar Calculator</title>
+   <meta charset='utf-8'> 
+	<title>Custom Solar: Solar Calculator</title>
 	<script type="text/javascript" src="js/jqmin.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -41,12 +44,16 @@
           $<input type="number" name="savings">
           <input type="submit" value="Calculate">
         </label>
-        <table>
-          <th><?= $_GET["savings"]?></th>
-        </table>
       </form>
     </fieldset>
 
     </div> <!-- /container -->
 </body>
 </html>
+
+<?php
+function calculate($monthly_savings) {
+  # Convert savings per month
+  echo ($monthly_savings / $KWH_FIXED;
+}
+?>

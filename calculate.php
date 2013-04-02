@@ -41,7 +41,7 @@
     	<fieldset>
       <form action="calculate.php" method="get">
         <label>How much of your electric bill would you like to eliminate on a monthly basis:<br>
-          $<input type="number" name="savings">
+          <input type="number" name="savings">
           <input type="submit" value="Calculate">
         </label>
       </form>
@@ -53,7 +53,9 @@
 
 <?php
 function calculate($monthly_savings) {
+  $kwh_fixed = constant("KWH_FIXED");
   # Convert savings per month
-  echo ($monthly_savings / $KWH_FIXED;
+  echo ($monthly_savings / $kwh_fixed);
+  
 }
 ?>

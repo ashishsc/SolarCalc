@@ -1,5 +1,8 @@
 <?php
   define("KWH_FIXED", 0.14);
+  define("SYS_DIVISOR", 1440);
+  define("WATTS_PER_PANEL", 260);
+
   $monthly_savings = $_GET["savings"];
   calculate($monthly_savings);
 ?>
@@ -53,9 +56,18 @@
 
 <?php
 function calculate($monthly_savings) {
+  // Get constants
   $kwh_fixed = constant("KWH_FIXED");
+  $system_size_constant = constant("SYS_DIVISOR");
+  $watts_per_panel = constant("WATTS_PER_PANEL");
+
   # Convert savings per month
-  echo ($monthly_savings / $kwh_fixed);
+  $kw_per_month = ($monthly_savings / $kwh_fixed);
+  $kw_yearly = $kw_per_month * 12; // yearly kwh usage
+  $system_size = $kw_yearly / $system_size_constant / 100;
+  $total_watts = $system_size * 1000;
+  $num_panels = ceil($total_watts / $watts_per_panel); // round up for panels
   
+
 }
 ?>

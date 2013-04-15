@@ -7,7 +7,9 @@ table, th, td {
 	border: 1px solid black;
 }
 
-
+table {
+	margin-top: 50px;
+}
 th, td {
 	padding: 5px;
 }

@@ -17,3 +17,11 @@ th, td {
 .paid-back {
 	background-color: green;
 }
+
+#submit-btn {
+	float: right;
+}
+
+#calc-form {
+	width: 30%;
+}

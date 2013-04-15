@@ -3,6 +3,7 @@
 'use strict'
 
 $(document).ready(function() {
-	$('#balance-point').addClass('paid-back');
-	$('#calculations').show();
+	//$('#balance-point').addClass('paid-back'); // uncomment if adding singular balance point
+	$('table').css('display', 'none');
+	$('table').fadeIn();
 });
